@@ -36,3 +36,4 @@ domain
 - yz_specCorr: Cross correlation between axis2 and axis3 in frequency
 domain
 - spectral_mean: Average of signal in frequency domain
+- spectral_std: Standard deviation of signal in frequency domain
