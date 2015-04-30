@@ -29,9 +29,11 @@ try
         
         % Calling functions to extract the corresponding feature
         length = c1_boutLength(logFileId, inputFileName, wearTimes(boutNo, 1), wearTimes(boutNo, 2));
-        printItToOutputCSVFile(outputFileId, length, 0, 0);
+        printItToOutputCSVFile(outputFileId, length, 1, 0);
         
+        %tic;
         largestLyapunovExponent = c1_largestLyupunovExponent(logFileId, inputFileName, boutVM);
+        %fprintf('For a bout (%d) it took %d ms', length, toc);
         printItToOutputCSVFile(outputFileId, largestLyapunovExponent, 0, 0);
         
         harmonicRatio = c1_harmonicRatio(logFileId, inputFileName, boutVM);
@@ -91,14 +93,15 @@ try
         spectralCentroid = c4_spectralCentroid(logFileId, boutVM);
         printItToOutputCSVFile(outputFileId, spectralCentroid, 0, 0);
         %}
-        [spectralAvg, spectralStd] = c4_spectralMeanAndStd(logFileId, inputFileName, boutVM);
-        printItToOutputCSVFile(outputFileId, spectralAvg, 0, 0);
-        printItToOutputCSVFile(outputFileId, spectralStd, 0, 0);
-        
+                
         [xy_specXCorr, xz_specXCorr, yz_specXCorr] = c4_spectralCrossCorrelation(logFileId, inputFileName, boutX, boutY, boutZ);
         printItToOutputCSVFile(outputFileId, xy_specXCorr, 0, 0);
         printItToOutputCSVFile(outputFileId, xz_specXCorr, 0, 0);
         printItToOutputCSVFile(outputFileId, yz_specXCorr, 0, 1);
+        
+        [spectralAvg, spectralStd] = c4_spectralMeanAndStd(logFileId, inputFileName, boutVM);
+        printItToOutputCSVFile(outputFileId, spectralAvg, 0, 0);
+        printItToOutputCSVFile(outputFileId, spectralStd, 0, 0);
         
     end
     
