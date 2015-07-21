@@ -3,8 +3,8 @@ Feature extraction for Bouts
 
 Reads _.csv_ files in the selected folder, and for each bout found in that file, some features are extracted and written in the output file.
 
-Example:
-**f01_extractBoutFeatures('MyFolder', 'output.csv');**
+Example: executel the 
+**run.m;** script
 
 Here is the list of features in the output file:
 - pid: participant's ID
