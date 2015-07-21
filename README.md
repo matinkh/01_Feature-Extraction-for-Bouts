@@ -8,8 +8,9 @@ Example:
 
 Here is the list of features in the output file:
 - pid: participant's ID
-- length: bout length in minute
-- lle: Largest Lyapunov Exponent
+- length_sec: bout length in second
+- activity_count_per_bout: Maximum of activity count/duration among all bouts of a participant.
+- lle: Largest Lyapunov Exponent... (not on default)
 - hr: Harmonic Ratio
 - skewness: Skewness of the signal
 - kurtosis: Kurtosis coefficient of the signal
@@ -28,7 +29,7 @@ Here is the list of features in the output file:
 - peak_frequency: Frequency where max amplitude happens
 - wavelet_energy: Energy contribution
 - wavelet_entropy: Signal disorder
-- spectral_flux: How fast power spectrum changes
+- spectral_flux: How fast power spectrum changes (not ont default)
 - xy_specCorr: Cross correlation between axis1 and axis2 in frequency
 domain
 - xz_specCorr: Cross correlation between axis1 and axis3 in frequency
